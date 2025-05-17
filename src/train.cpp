@@ -1,13 +1,13 @@
 // Copyright 2021 NNTU-CS
 #include "train.h"
-Train::Train() : first(nullptr) countOp(0), {}
+Train::Train() : first(nullptr), countOp(0) {}
 
 Train::~Train() {
   Car* currentCar = first->next;
-  if (!first) {
+  if (!first) return;
   while (currentCar != first) {
     Car* temp = currentCar;
-    currentCar = current->next;
+    currentCar = currentCar->next;
     delete temp;
   }
   delete first;
